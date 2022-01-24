@@ -28,10 +28,14 @@ public class Homework {
      **/
     public static int sum(int a, int b) {
         int result = a + b;
-        if (a + b > (2^31 - 1))
+        if (result > Integer.MAX_VALUE) {
             return -1;
-        else
+        }
+        else {
             return result;
+
+
+        }
     }
 
     /**
@@ -67,7 +71,7 @@ public class Homework {
      * return 20
      */
     public static double calculateHypotenuse(int a, int b) {
-        return Math.sqrt(a^2 + b^2);
+        return Math.sqrt(a*a + b*b);
     }
 
 }
