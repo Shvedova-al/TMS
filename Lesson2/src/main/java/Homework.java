@@ -27,8 +27,10 @@ public class Homework {
      * 2. Дополнительно: сделать проверку если сумма a и b больше чем максимальное значение int то вернуть -1
      **/
     public static int sum(int a, int b) {
-
-        return 0;
+        int result = a + b;
+        if (a + b > (2^31 - 1))
+        return -1;
+        else return result;
     }
 
     /**
