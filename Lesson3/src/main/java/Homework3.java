@@ -1,46 +1,76 @@
 import java.util.Scanner;
-public class Homework3 {
 
+public class Homework3 {
 
     public static void main(String[] args) {
 
-        for (char Alpha = 'a'; Alpha < 'z'; Alpha++) {
-            System.out.println(Alpha);
+        // Task1
+        for (char alpha = 'a'; alpha <= 'z'; alpha++) {
+            System.out.println(alpha);
         }
 
-        System.out.println("Введите положительное целое число");
+        //Task2
+        {
+            System.out.println("Введите целое число");
 
-        Scanner in = new Scanner(System.in);
-        int num = in.nextInt();
-        if (num % 2 == 0) {
-            System.out.println("Вы ввели четное число");
+            Scanner in = new Scanner(System.in);
+            if (in.hasNextInt()) {
+                int num = in.nextInt();
+                if (num % 2 == 0) {
+                    System.out.println("Вы ввели четное число");
+                } else {
+                    System.out.println("Вы ввели нечетное число");
+                }
+            } else {
+                System.out.println("Введенное число не соответствует условию");
             }
-        else if (num % 2 == 1) {
-            System.out.println("Вы ввели нечетное число");
-        }
-        else {
-            System.out.println("Введенное число не соответствует условию");
         }
 
-        System.out.println("Введите 3 вещественных числа");
-        Scanner scan = new Scanner(System.in);
-        float num1 = scan.nextFloat();
-        float num2 = scan.nextFloat();
-        float num3 = scan.nextFloat();
+        //Task3
+        {
+            System.out.println("Введите 3 вещественных числа");
+            Scanner scan = new Scanner(System.in);
+            float num1 = scan.nextFloat();
+            float num2 = scan.nextFloat();
+            float num3 = scan.nextFloat();
 
-        num1 = Math.abs(num1);
-        num2 = Math.abs(num2);
-        num3 = Math.abs(num3);
+            num1 = Math.abs(num1);
+            num2 = Math.abs(num2);
+            num3 = Math.abs(num3);
 
-        float min1 = Math.min(num1, num2);
-        float min2 = Math.min(min1, num3);
-        System.out.println("Наименьшее вещественное число по модулю:\n" + min2);
-
-
-
+            float min1 = Math.min(num1, num2);
+            float min2 = Math.min(min1, num3);
+            System.out.println("Наименьшее вещественное число по модулю:\n" + min2);
+        }
 
 
+        //Task4
+        {
+            System.out.println("Введите число от 0 до 28800");
+
+            Scanner scan = new Scanner(System.in);
+            int num = scan.nextInt();
+            System.out.printf("%d\n", num);
+            for (
+                    int hour = 8, sec = 25200;
+                    hour >= 0; hour--, sec -= 3600) {
+                if (num <= 28800 && num > sec) {
+                    System.out.printf("Осталось %d часов\n", hour);
+                    break;
+                }
+            }
+        }
     }
+}
+
+
+
+/*
+
+
+
+
+
 
 
 
@@ -93,15 +123,15 @@ public class Homework3 {
      * Example:
      * array = {1,2,3,4,5}
      * Метод должен return 3.0
-     */
+
     public static double average(int[] array) {
         return 0;
     }
 
     /**
      * 7) Метод должен вернуть максимальый элемент массива. Пример: array = {1,2,10,3} метод возвращает 10
-     **/
+
     public static int max(int[] array) {
         return 0;
-    }
-}
+        }
+ */
