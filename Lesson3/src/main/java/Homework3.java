@@ -127,31 +127,6 @@ public class Homework3 {
         System.out.println("double:  я     я     я      я      я      я      т        х   ");
     }
 }
-/*
-        //Task 6
-        public static int average ( int[] array){
-            int sum = 0;
-            for (int i = 0; i < array.length; i++) {
-                sum = sum + array[i];
-            }
-            return (double) sum / array.length;
-
-
-            public static int max ( int[] array){
-                int maxvalue = 0;
-                for (int i = 0; i < array.length; i++) {
-                    if (array[i] > maxvalue)
-                        maxvalue = array[i];
-                }
-                return max;
-            }
-        }
-    }
-}
-
-
-
-
 
 /*
     //Задачи:
