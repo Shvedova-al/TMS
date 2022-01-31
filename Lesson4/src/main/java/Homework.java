@@ -74,46 +74,46 @@ public class Homework {
         System.out.println("Введите месяц вашего рождения");
         Scanner mth = new Scanner(System.in);
         int month = mth.nextInt();
-        String zodiak;
+        String zodiac = "не определен. Введено неверное число.";
         switch (month) {
             case 1:
-                zodiak = day < 21 ? "Козерог" : "Водолей";
+                zodiac = day < 21 && day > 0  ? "Козерог" : day < 32 ? "Водолей" : "не определен. Введено неверное число.";
                 break;
             case 2:
-                zodiak = day < 20 ? "Водолей" : "Рыбы";
+                zodiac = day < 20 && day > 0 ? "Водолей" : day < 29 ? "Рыбы" : "не определен. Введено неверное число.";
                 break;
             case 3:
-                zodiak = day < 21 ? "Рыбы" : "Овен";
+                zodiac = day < 21 && day > 0 ? "Рыбы" : day < 32 ? "Овен" : "не определен. Введено неверное число.";
                 break;
             case 4:
-                zodiak = day < 21 ? "Овен" : "Телец";
+                zodiac = day < 21 && day > 0 ? "Овен" : day < 31 ? "Телец" : "не определен. Введено неверное число.";
                 break;
             case 5:
-                zodiak = day < 22 ? "Телец" : "Близнецы";
+                zodiac = day < 22 && day > 0 ? "Телец" : day < 32 ? "Близнецы": "не определен. Введено неверное число.";
                 break;
             case 6:
-                zodiak = day < 22 ? "Близнецы" : "Рак";
+                zodiac = day < 22 && day > 0 ? "Близнецы" : day < 31 ? "Рак" : "не определен. Введено неверное число.";
                 break;
             case 7:
-                zodiak = day < 23 ? "Рак" : "Лев";
+                zodiac = day < 23 && day > 0 ? "Рак" : day < 32 ? "Лев" : "не определен. Введено неверное число.";
                 break;
             case 8:
-                zodiak = day < 22 ? "Лев" : "Дева";
+                zodiac = day < 22 && day > 0 ? "Лев" : day < 32 ? "Дева" : "не определен. Введено неверное число.";
                 break;
             case 9:
-                zodiak = day < 24 ? "Дева" : "Весы";
+                zodiac = day < 24 && day > 0 ? "Дева" : day < 31 ? "Весы" : "не определен. Введено неверное число.";
                 break;
             case 10:
-                zodiak = day < 24 ? "Весы" : "Скорпион";
+                zodiac = day < 24 && day > 0 ? "Весы" : day < 32 ? "Скорпион": "не определен. Введено неверное число.";
                 break;
             case 11:
-                zodiak = day < 24 ? "Скорпион" : "Стрелец";
+                zodiac = day < 24 && day > 0 ? "Скорпион" : day < 31 ? "Стрелец": "не определен. Введено неверное число.";
                 break;
             case 12:
-                zodiak = day < 23 ? "Стрелец" : "Козерог";
+                zodiac = day < 23 && day > 0 ? "Стрелец" : day < 32 ? "Козерог" : "не определен. Введено неверное число.";
                 break;
         }
-            System.out.printf("Ваш знак зодиака %s\n", zodiak);
+            System.out.printf("Ваш знак зодиака %s\n", zodiac);
 
 
        //Некоторые тесты для проверки задач. Можно также написать свои тесты.
@@ -138,7 +138,14 @@ public class Homework {
      * далее вывести массив на консоль
      */
     private static void printArray() {
-        // тут пишем логику
+
+
+
+
+
+
+
+
     }
 
     /**
