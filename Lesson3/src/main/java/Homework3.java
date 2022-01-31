@@ -1,4 +1,4 @@
-
+import java.util.Random;
 import java.util.Scanner;
 
 public class Homework3 {
@@ -72,49 +72,46 @@ public class Homework3 {
 
 
         //Task 4.2
-/*
 
-            private static void display (int value) {
-                Random random = new Random();
-                value = random.nextInt(28800);
-                display(value);
 
-                int hour = value / 3600;
-                String result;
-                switch (hour) {
-                    case 0:
-                        result = "Осталось менее часа";
-                        break;
-                    case 1:
-                        result = "Остался 1 час";
-                        break;
-                    case 2:
-                        result = "Осталось 2 часа";
-                        break;
-                    case 3:
-                        result = "Осталось 3 часа";
-                        break;
-                    case 4:
-                        result = "Осталось 4 часа";
-                        break;
-                    case 5:
-                        result = "Осталось 5 часов";
-                        break;
-                    case 6:
-                        result = "Осталось 6 часов";
-                        break;
-                    case 7:
-                        result = "Осталось 7 часов";
-                        break;
-                    case 8:
-                        result = "Осталось 8 часов";
-                        break;
+        Random random = new Random();
+        int value = random.nextInt(28800);
+        System.out.println(value);
+        int hour = value / 3600;
+        String result = null;
+        switch (hour) {
+            case 0:
+                result = "Осталось менее часа";
+                break;
+            case 1:
+                result = "Остался 1 час";
+                break;
+            case 2:
+                result = "Осталось 2 часа";
+                break;
+            case 3:
+                result = "Осталось 3 часа";
+                break;
+            case 4:
+                result = "Осталось 4 часа";
+                break;
+            case 5:
+                result = "Осталось 5 часов";
+                break;
+            case 6:
+                result = "Осталось 6 часов";
+                break;
+            case 7:
+                result = "Осталось 7 часов";
+                break;
+            case 8:
+                result = "Осталось 8 часов";
+                break;
 
-                }
-                System.out.println(result);
-            }
         }
-*/
+        System.out.println(result);
+
+
         //Task 5
 
         System.out.println("       byte	 short  char   int   long  float  double   boolean");
@@ -127,6 +124,31 @@ public class Homework3 {
         System.out.println("double:  я     я     я      я      я      я      т        х   ");
     }
 }
+/*
+        //Task 6
+        public static double average ( int[] array){
+            int sum = 0;
+            for (int i = 0; i < array.length; i++) {
+                sum = sum + array[i];
+            }
+            return (double) sum / array.length;
+
+
+            public static int max ( int[] array){
+                int maxvalue = 0;
+                for (int i = 0; i < array.length; i++) {
+                    if (array[i] > maxvalue)
+                        maxvalue = array[i];
+                }
+                return max;
+            }
+        }
+    }
+}
+
+
+
+
 
 /*
     //Задачи:
