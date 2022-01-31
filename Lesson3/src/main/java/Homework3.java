@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Homework3 {
-    public static double main(String[] args) {
+    public static void main(String[] args) {
 
         // Task1
         for (char alpha = 'a'; alpha <= 'z'; alpha++) {
@@ -122,29 +122,29 @@ public class Homework3 {
         System.out.println("long:    я     я     я      я      т     ня     ня        х   ");
         System.out.println("float:   я     я     я      я      я      т     ня        х   ");
         System.out.println("double:  я     я     я      я      я      я      т        х   ");
-
-
+    }
+}
 /*
         //Task 6
-        public static double average ( int[] array ) {
+        public static double average ( int[] array){
             int sum = 0;
-            for (int j : array) {
-                sum = sum + j;
+            for (int i = 0; i < array.length; i++) {
+                sum = sum + array[i];
             }
             return (double) sum / array.length;
-        }
 
 
-        public static int max ( int[] array){
+            public static int max ( int[] array){
                 int maxvalue = 0;
-            for (int j : array) {
-                if (j > maxvalue)
-                    maxvalue = j;
-            }
-                return maxvalue;
+                for (int i = 0; i < array.length; i++) {
+                    if (array[i] > maxvalue)
+                        maxvalue = array[i];
+                }
+                return max;
             }
         }
-
+    }
+}
 
 
 
