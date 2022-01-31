@@ -1,7 +1,9 @@
+
 public class Homework {
         public static void main(String[] args) {
-            summ(2, 3);
-            Pyramid();
+            summ(-5, -1);
+            pyramid();
+            numbers();
             calculateSumOfDiagonalElements();
             printMatrix();
         }
@@ -10,12 +12,22 @@ public class Homework {
 //        1) Напишите реализацию метода summ(int a, int b), вычисляющий a*b, не пользуясь операцией
 //        умножения, где a и b целые числа, вызовите метод summ  в методе main и распечатайте на консоль.
     public static void summ (int a, int b) {
-            int sum =0;
-        for (int i = 0; i < b; i++) {
-            sum = sum + a;
-        } System.out.println(sum);
-    } 
+            if (a == 0 || b == 0)
+            System.out.println("0");
+        else
+        {
 
+            int sum = 0;
+            for (int i = 0; i < Math.abs(b); i++) {
+                sum = sum + Math.abs(a);
+            }
+            if (a < 0 || b < 0) {
+                System.out.println(-sum);
+            } else
+                System.out.println(sum);
+
+        }
+    }
 //        2) Дан двухмерный массив размерностью 4 на 4, необходимо нарисовать четыре треугольника вида
 
 //        a)                  b)
@@ -30,7 +42,7 @@ public class Homework {
 //            * *        * *
 //              *        *
 
-    public static void Pyramid() {
+    public static void pyramid() {
         int h = 4;
         // Enter the raw
         for (int r = 1; r <= h; r++) {
@@ -51,28 +63,48 @@ public class Homework {
         }
         System.out.print("\n");
 
-            for (int r2 = 1; r2 <= h; r2++) {
-                //Enter the column
-                for (int k = 0; k < h + 3 + h; k++) {
-                    int i = r2 - 1; //empty blocks/how many symbols in a raw
-                    // Build the pyramid
-                    int n = h + 2 + h - i;
-                    if (k < i ^ k > n)
-                        System.out.print("  ");
-                    else if (k == h || k == h + 1 || k == h + 2) // empty zone between columns
-                        System.out.print(" ");
-                    else
-                        System.out.print(" *");
-                }
-
-                System.out.print("\n");
+        for (int r2 = 1; r2 <= h; r2++) {
+            //Enter the column
+            for (int k = 0; k < h + 3 + h; k++) {
+                int i = r2 - 1; //empty blocks/how many symbols in a raw
+                // Build the pyramid
+                int n = h + 2 + h - i;
+                if (k < i ^ k > n)
+                    System.out.print("  ");
+                else if (k == h || k == h + 1 || k == h + 2) // empty zone between columns
+                    System.out.print(" ");
+                else
+                    System.out.print(" *");
             }
-        }
 
-    /*
+            System.out.print("\n");
+        }
+    }
+
+
 //        3) Создайте массив из всех нечётных чисел от 1 до 100, выведите его на экран в строку,
 //        а затем этот же массив выведите на экран тоже в строку, но в обратном порядке (99 97 95 93 ... 7 5 3 1).
+public static void numbers () {
+    int[] nums = new int[50];
+    int[] nums2 = new int [50];
+        int n = 1;
+        for (int i = 0; i < 49; i++) {
+            nums[i] = n;
+            System.out.print(nums[i] + " ");
+            n += 2;
 
+            System.arraycopy(nums, nums[i], nums2, nums2[49 - i], 50);
+            System.out.print(nums2[49 - i] + " ");
+
+        }
+        }
+
+
+
+
+    /*
+  int[] nums2 = new int[];
+            for (int j = 50; j > 0; j--) {
 //        4) Создайте массив из int[] mass = new int[12]; Рандомно заполните его значениями от 0 до 15.
 //        Определите какой элемент является в этом массиве максимальным и сообщите индекс его последнего вхождения в массив.
 //        Пример: {3,4,5,62,7,8,4,-5,7,62,5,1} Максимальный элемент 62, индекс его последнего вхождения в массив = 10
@@ -99,12 +131,12 @@ public class Homework {
 //          1 5 6 7      4 9 5 7
 
 
-        /**
-         * заполнить рандомно 2-х мерный массив и посчитать сумму элементов на диагонали
-         */
-        public static void calculateSumOfDiagonalElements() {
-            //пишем логику и выводим результат используя System.out.println
-        }
+            /**
+             * заполнить рандомно 2-х мерный массив и посчитать сумму элементов на диагонали
+             */
+            public static void calculateSumOfDiagonalElements() {
+                //пишем логику и выводим результат используя System.out.println
+            }
 
 /*
         /**
@@ -129,8 +161,7 @@ public class Homework {
          * <p>
          * Обратите внимание, что 21% 3 == 0 и 21% 7 = 0, но выводить надо не +-, а +
          */
-        public static void printMatrix() {
-            // тут пишем логику
+            public static void printMatrix() {
+                // тут пишем логику
+            }
         }
-    }
-
