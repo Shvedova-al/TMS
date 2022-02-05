@@ -4,14 +4,26 @@ public class User {
     private int age;
     private String sex;
 
+    public User(String name) {
+        this(27);
+        this.name = name;
+
+    }
+
+    public User(int age) {
+        this.age = age;
+    }
+
+
     public User(String name, String surname, int age, String sex) {
         this.name = name;
         this.surname = surname;
         this.age = age;
         this.sex = sex;
-        System.out.println(name + " " + surname);
+
 
     }
+
 
     public int getAge() {
         return age;
@@ -26,6 +38,13 @@ public class User {
         }
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
 
     @Override
     public String toString() {
