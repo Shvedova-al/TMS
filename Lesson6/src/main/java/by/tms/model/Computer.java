@@ -5,26 +5,22 @@ import java.util.Scanner;
 
 
 public class Computer {
-    private static String cpu;
-    private static String ram;
-    private static String hdd;
-    private static int cycle;
+    private String cpu;
+    private String ram;
+    private String hdd;
+    private int cycle;
 
     public Computer(String cpu, String ram, String hdd, int cycle) {
-        Computer.cpu = cpu;
-        Computer.ram = ram;
-        Computer.hdd = hdd;
-        Computer.cycle = cycle;
+        this.cpu = cpu;
+        this.ram = ram;
+        this.hdd = hdd;
+        this.cycle = cycle;
     }
 
-    public static void main(String[] args) {
-        new Computer(cpu, ram, hdd, 3);
-        on();
-    }
 
     @Override
     public String toString() {
-        return "Computer" +
+        return "Computer " +
                 "cpu: " + cpu + '\n' +
                 "ram: " + ram + '\n' +
                 "hdd: " + hdd + '\n' +
@@ -32,7 +28,7 @@ public class Computer {
     }
 
 
-    static void on() {
+    public void on() {
         do {
             System.out.println("Внимание! Введите 0 или 1");
             Scanner scanner = new Scanner(System.in);
@@ -40,22 +36,24 @@ public class Computer {
             Random random = new Random();
             int ran = random.nextInt(2);
             System.out.println(ran);
-            if (scan != ran) {
+            if (scan != ran || cycle == 0) {
                 System.out.println("Компьютер сгорел!");
-            } else off();
-        } while (cycle < 0);
+                break;
+            } else {
+                off();
+            }
+        } while (cycle >= 0);
 
     }
 
-    static void off() {
+    void off() {
         if (cycle != 0) {
-            cycle--;
-        } else {
-            System.out.println("Компьютер сгорел!");
-        }
+            System.out.printf("Компьютер выключается. Осталось полных циклов %d\n", --cycle);
 
+        }
     }
 }
+
 
 
 
