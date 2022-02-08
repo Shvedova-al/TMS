@@ -4,32 +4,29 @@ import java.util.Scanner;
 
 public class Car {
 
-    static int distance = 0;
-    private final String model;
-    private final String color;
-    static Engine engine = new Engine();
+    private int petrol = 0;
+    private static int distance = 0;
+    String model;
+    int year;
 
-    public Car(String model, String color) {
+
+    public Car(String model, int year) {
         this.model = model;
-        this.color = color;
-
-
+        this.year = year;
     }
 
-    public static void main(String[] args) {
-
+    public static void start() {
+        final Engine engine = new Engine();
         engine.start();
     }
 
-
-    static void movement() {
-
-
-        String answer2 = null;
+    public static void movement() {
+        String answer2;
+        String answer;
         do {
             System.out.println("Поехали? да/нет");
             Scanner scanner = new Scanner(System.in);
-            String answer = scanner.next();
+            answer = scanner.next();
             switch (answer) {
                 case "да":
                     distance += 85;
@@ -38,25 +35,31 @@ public class Car {
                     answer2 = scaner.next();
                     switch (answer2) {
                         case "да":
-                            System.out.printf("На машине проехали всего %dкм.\n", distance);
-                            engine.stop();
+                            break;
                         case "нет":
                             continue;
                     }
                 case "нет":
-                    System.out.printf("На машине проехали всего %dкм.\n", distance);
-                    engine.stop();
+                    break;
+
             }
-        } while (Objects.equals(answer2, "нет"));
+        } while (Objects.equals(answer, "нет"));
+    }
 
+    public static void stop() {
+        System.out.println("Хотите выключить машину? да/нет");
+        Scanner scanner = new Scanner(System.in);
+        String answer = scanner.next();
+        switch (answer) {
+            case "нет" -> start();
+            case "да" -> System.out.println("Машина выключена");
+
+
+        }
 
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public String getModel() {
-        return model;
+    public static void distance() {
+        System.out.printf("На машине проехали всего %dкм.\n", distance);
     }
 }
