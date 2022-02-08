@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Car {
 
-
+    static int distance = 0;
     private final String model;
     private final String color;
     static Engine engine = new Engine();
@@ -34,7 +34,7 @@ public class Car {
 
     static void movement() {
 
-        int distance = 0;
+
         String answer2 = null;
         do {
             System.out.println("Поехали? да/нет");
