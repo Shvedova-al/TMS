@@ -18,16 +18,6 @@ public class Car {
 
     public static void main(String[] args) {
 
-        start();
-    }
-
-    private static void start() {
-        checkEngine();
-
-    }
-
-    private static void checkEngine() {
-
         engine.start();
     }
 

@@ -9,12 +9,14 @@ public class Engine {
         int start = random.nextInt(2);
         System.out.println(start);
         switch (start) {
-            case 0:
+            case 0 -> {
                 System.out.println("Двигатель запущен.");
                 Car.movement();
-            case 1:
+            }
+            case 1 -> {
                 System.out.println("Двигатель заглох");
                 stop();
+            }
         }
 
     }
