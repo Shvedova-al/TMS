@@ -1,12 +1,27 @@
-import java.util.Random;
+import java.util.Scanner;
 
-public class Petrol {
+class Petrol {
+    public int level;
 
-    public static boolean checkPetrol() {
-        Random random = new Random();
-        boolean petrol = random.nextBoolean();
-        return petrol;
+
+    Petrol(int level) {
+        this.level = level;
     }
 
 
+    static void checkPetrol() {
+        if (Car.levelPetrol > 0) {
+            Engine.start();
+        } else {
+            System.out.println("Закончилось топливо. На сколько литров заправить?");
+            Scanner scanner = new Scanner(System.in);
+            int answer4 = scanner.nextInt();
+            Car.levelPetrol += answer4;
+
+        }
+
+    }
 }
+
+
+

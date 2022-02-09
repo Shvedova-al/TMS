@@ -1,65 +1,91 @@
-
-import java.util.Objects;
 import java.util.Scanner;
 
-public class Car {
+class Car {
 
-    private int petrol = 0;
-    private static int distance = 0;
-    String model;
-    int year;
+    private static String model;
+    private static int year;
+    private static Engine engine = new Engine("бензин");
+    private Petrol petrol = new Petrol(50);
 
 
-    public Car(String model, int year) {
+    public Car(String model, int year, String typeEngine, int levelPetrol) {
         this.model = model;
         this.year = year;
+        this.engine = new Engine(typeEngine);
+        this.petrol = new Petrol(levelPetrol);
     }
 
-    public static void start() {
-        final Engine engine = new Engine();
-        engine.start();
+    public static void displayInfo() {
+        Car car = new Car(model, year, engine.type, levelPetrol);
+        System.out.println(car);
+
     }
 
-    public static void movement() {
-        String answer2;
+
+    static int levelPetrol;
+    private static int distance = 0;
+
+
+    static void start() {
+
+        Engine.start();
+    }
+
+
+    static void movement() {
         String answer;
-        do {
-            System.out.println("Поехали? да/нет");
-            Scanner scanner = new Scanner(System.in);
-            answer = scanner.next();
-            switch (answer) {
-                case "да":
-                    distance += 85;
-                    System.out.println("Вжж___ ___ ___ Приехали.\nЗакончить поездку? да/нет");
-                    Scanner scaner = new Scanner(System.in);
-                    answer2 = scaner.next();
-                    switch (answer2) {
-                        case "да":
-                            break;
-                        case "нет":
-                            continue;
-                    }
-                case "нет":
-                    break;
+        distance += 85;
+        levelPetrol -= 5;
+        System.out.println("Вжж___ ___ ___ Приехали.\nЗакончить поездку? да/нет");
+        Scanner scanner = new Scanner(System.in);
+        answer = scanner.next();
+        switch (answer) {
+            case "да":
+                Main.stop();
+            case "нет":
+                movement();
 
-            }
-        } while (Objects.equals(answer, "нет"));
+        }
     }
 
-    public static void stop() {
+    static void stop() {
         System.out.println("Хотите выключить машину? да/нет");
         Scanner scanner = new Scanner(System.in);
-        String answer = scanner.next();
-        switch (answer) {
-            case "нет" -> start();
+        String answer3 = scanner.next();
+        switch (answer3) {
+            case "нет" -> Car.start();
             case "да" -> System.out.println("Машина выключена");
-
-
         }
 
     }
 
-    public static void distance() {
+    static void distance() {
         System.out.printf("На машине проехали всего %dкм.\n", distance);
+
+    }
+
+    public static int getLevelPetrol() {
+        return levelPetrol;
+    }
+
+    public static void setLevelPetrol(int levelPetrol) {
+        Car.levelPetrol = levelPetrol;
+    }
+
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public Petrol getPetrol() {
+        return petrol;
     }
 }

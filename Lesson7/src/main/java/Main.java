@@ -1,31 +1,15 @@
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Ваша машина: " + new Car("Toyota", 2015));
-
-        start();
-        stop();
-        checkDistance();
-        checkPetrol();
-
-    }
-
-
-    public static void start() {
+        Car car = new Car("бмв", 2015, "бензин", 50);
+        Car.displayInfo();
         Car.start();
-
     }
 
-    private static void stop() {
-        Car.distance();
+    public static void stop() {
         Car.stop();
+        Car.distance();
+        System.out.println("Топлива осталось " + Car.levelPetrol + "л.");
     }
-
-    private static void checkDistance() {
-    }
-
-    private static void checkPetrol() {
-    }
-
-
 }
+
